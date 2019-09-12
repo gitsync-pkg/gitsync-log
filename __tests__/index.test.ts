@@ -2,22 +2,22 @@ import log from '..';
 import * as npmlog from 'npmlog';
 
 function getLastLog() {
-  return npmlog.record[npmlog.record.length - 1].message;
+  return npmlog.record[npmlog.record.length - 1];
 }
 
 describe('gitsync-log', () => {
   test('debug level', async () => {
     log.debug('debug');
-    expect(getLastLog()).toBe('debug');
+    expect(getLastLog()).toMatchObject({level: 'verbose', message: 'debug'});
   });
 
   test('info level', async () => {
-    log.debug('info');
-    expect(getLastLog()).toBe('info');
+    log.info('info');
+    expect(getLastLog()).toMatchObject({level: 'info', message: 'info'});
   });
 
   test('warn level', async () => {
-    log.debug('warn');
-    expect(getLastLog()).toBe('warn');
+    log.warn('warn');
+    expect(getLastLog()).toMatchObject({level: 'warn', message: 'warn'});
   });
 });
