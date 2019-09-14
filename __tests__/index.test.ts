@@ -6,6 +6,11 @@ function getLastLog() {
 }
 
 describe('gitsync-log', () => {
+  test('trace level', async () => {
+    log.trace('trace');
+    expect(getLastLog()).toMatchObject({level: 'silly', message: 'trace'});
+  });
+
   test('debug level', async () => {
     log.debug('debug');
     expect(getLastLog()).toMatchObject({level: 'verbose', message: 'debug'});

@@ -1,6 +1,9 @@
 import * as log from 'npmlog';
 
 export default {
+  trace: (message: string, ...args: any[]) => {
+    log.silly('', message, ...args);
+  },
   debug: (message: string, ...args: any[]) => {
     log.verbose('', message, ...args);
   },
