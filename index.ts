@@ -13,4 +13,7 @@ export default {
   warn: (message: string, ...args: any[]) => {
     log.warn('', message, ...args);
   },
+  error: (message: string, ...args: any[]) => {
+    log.error('', message, ...args);
+  }
 }

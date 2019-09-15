@@ -25,4 +25,9 @@ describe('gitsync-log', () => {
     log.warn('warn');
     expect(getLastLog()).toMatchObject({level: 'warn', message: 'warn'});
   });
+
+  test('error level', async () => {
+    log.error('error');
+    expect(getLastLog()).toMatchObject({level: 'error', message: 'error'});
+  });
 });
