@@ -27,7 +27,7 @@
     "prepare": "yarn build"
   },
   "dependencies": {
-    "@types/node": "^12.7.3",
+    "@types/node": "^14.0.23",
     "@types/npmlog": "^4.1.2",
     "npmlog": "^4.1.2"
   },
